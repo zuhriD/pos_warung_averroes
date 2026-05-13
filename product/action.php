@@ -34,11 +34,27 @@ if (isset($_GET['aksi'])) {
     } else if ($aksi == 'update') {
         $id = $_POST['id'];
         $nama = $_POST['nama_product'];
-        $harga = $_POST['harga_product'];
-        $stock = $_POST['stock_product'];
-        $image = $_POST['image_product'];
-        $category = $_POST['category_product'];
-        updateProduct($conn, $id, $nama, $harga, $stock, $image, $category);
+        $harga = $_POST['price'];
+        $deskripsi = $_POST['deskripsi'];
+        $stock = $_POST['stok'];
+        $category = $_POST['id_category'];
+        $image = $_FILES['image'];
+        if ($image) {
+            // target folder
+            $targetFolder = "image_product/";
+            $filename = basename($image['name']);
+            $targetFileFolder = $targetFolder . $filename;
+
+            if (move_uploaded_file($image['tmp_name'], $targetFileFolder)) {
+                echo $filename;
+            } else {
+                echo "image gagal diupload";
+            }
+
+            updateProduct($conn, $id, $nama, $harga, $deskripsi, $filename, $stock, $category);
+        } else {
+            updateProduct($conn, $id, $nama, $harga, $deskripsi, '', $stock, $category);
+        }
     } else if ($aksi == 'delete') {
         $id = $_GET['id'];
         deleteProduct($conn, $id);
@@ -78,13 +94,19 @@ function showDataEditProduct($con, $id)
     return $result;
 }
 
-function updateProduct($con, $id, $nama, $harga, $stock, $image, $category)
+function updateProduct($con, $id, $nama, $harga, $deskripsi, $image, $stock, $category)
 {
-    $query = "update product set name = '$nama', harga = '$harga', stock = '$stock', image = '$image', category = '$category' where id = $id";
+    $query = '';
+    if ($image == '') {
+        $query = "update product set nama = '$nama', harga = '$harga', deskripsi = '$deskripsi', stok = '$stock', id_category = '$category' where id = $id";
+    } else {
+        $query = "update product set nama = '$nama', harga = '$harga', deskripsi = '$deskripsi', stok = '$stock', image = '$image', id_category = '$category' where id = $id";
+    }
+
     $result = $con->execute_query($query);
 
     if ($result) {
-        header("Location: index.php");
+        // header("Location: index.php");
     } else {
         echo "Gagal Mengupdate Role";
     }

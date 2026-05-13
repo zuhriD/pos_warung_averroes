@@ -194,7 +194,9 @@
                                         <label class="font-label-md text-on-surface-variant">Deskripsi</label>
                                         <input class="w-full p-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary-container focus:outline-none" placeholder="e.g. Nike" type="text" name="deskripsi" />
                                         <label class="font-label-md text-on-surface-variant">Image Product</label>
+
                                         <input class="w-full p-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary-container focus:outline-none" placeholder="e.g. Nike" type="file" name="image_product" />
+
                                         <label class="font-label-md text-on-surface-variant">Stock</label>
                                         <input class="w-full p-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary-container focus:outline-none" placeholder="e.g. Nike" type="text" name="stok" />
                                         <label class="font-label-md text-on-surface-variant">Category</label>
