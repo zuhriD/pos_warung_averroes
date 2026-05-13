@@ -163,7 +163,6 @@
     <main class="flex-1 flex flex-col h-screen overflow-hidden">
         <!-- TopNavBar (Shared Component) -->
         <?php
-        $page_name = "Category";
         require_once '../layout/top_navbar.php';
         ?>
         <!-- Scrollable Canvas -->
@@ -174,7 +173,7 @@
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-lg gap-4">
                     <div>
                         <h1 class="font-headline-lg text-on-surface">Add New Category</h1>
-                        <p class="text-body-md text-on-surface-variant">Create a new entry for your store's categories.</p>
+                        <p class="text-body-md text-on-surface-variant">Create a new entry for your store's categorys.</p>
                     </div>
 
                 </div>
@@ -188,8 +187,8 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
                                 <div class="md:col-span-2 flex flex-col gap-xs">
                                     <form action="action.php?aksi=insert" method="post">
-                                        <label class="font-label-md text-on-surface-variant">Nama Kategori</label>
-                                        <input class="w-full p-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary-container focus:outline-none" placeholder="e.g. Snacks" type="text" name="nama_kategori" />
+                                        <label class="font-label-md text-on-surface-variant">Category Name</label>
+                                        <input class="w-full p-md border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary-container focus:outline-none" placeholder="e.g. Admin" type="text" name="nama_category" />
 
                                 </div>
 

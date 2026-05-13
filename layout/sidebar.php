@@ -53,9 +53,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <span class="material-symbols-outlined" style="<?= icon_style('product') ?>">badge</span>
             <span>Product</span>
         </a>
-        <a class="<?= nav_class('transaction') ?>" href="../transaction/index.php">
+        <a class="<?= nav_class('transaction') ?>" href="../transaksi/index.php">
             <span class="material-symbols-outlined" style="<?= icon_style('transaction') ?>">point_of_sale</span>
             <span>Transaction</span>
+        </a>
+        <a class="<?= nav_class('detail_transaksi') ?>" href="../detail_transaksi/index.php">
+            <span class="material-symbols-outlined" style="<?= icon_style('detail_transaksi') ?>">receipt_long</span>
+            <span>Detail Transaksi</span>
         </a>
     </nav>
 

@@ -202,7 +202,7 @@
                         <thead>
                             <tr class="bg-slate-50 border-b border-slate-100">
                                 <th class="px-6 py-4 text-label-md font-label-md text-slate-500 uppercase tracking-wider">No</th>
-                                <th class="px-6 py-4 text-label-md font-label-md text-slate-500 uppercase tracking-wider">Nama Kategori</th>
+                                <th class="px-6 py-4 text-label-md font-label-md text-slate-500 uppercase tracking-wider">Nama Category</th>
                                 <th class="px-6 py-4 text-label-md font-label-md text-slate-500 uppercase tracking-wider text-right">Actions</th>
                             </tr>
                         </thead>
@@ -226,7 +226,7 @@
                                     <td class="px-6 py-4 text-right">
                                         <div class="flex items-center justify-end space-x-2">
                                             <a class="p-2 text-slate-400 hover:text-primary transition-colors" href="edit.php?aksi=edit&id=<?= $row['id'] ?>"><span class="material-symbols-outlined" data-icon="edit">edit</span></a>
-                                            <a class="p-2 text-slate-400 hover:text-error transition-colors" href="action.php?aksi=delete&id=<?= $row['id'] ?>" onclick="return confirm('Apakah anda yakin mau menghapus role ini?')"><span class="material-symbols-outlined" data-icon="delete">delete</span></a>
+                                            <a class="p-2 text-slate-400 hover:text-error transition-colors" href="action.php?aksi=delete&id=<?= $row['id'] ?>" onclick="return confirm('Apakah anda yakin mau menghapus category ini?')"><span class="material-symbols-outlined" data-icon="delete">delete</span></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -239,7 +239,23 @@
                         </tbody>
                     </table>
                 </div>
-
+                <!-- Pagination -->
+                <!-- <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                    <p class="text-body-sm text-slate-500">Showing 1 to 10 of 1,284 results</p>
+                    <div class="flex items-center space-x-1">
+                        <button class="p-2 rounded border border-slate-200 text-slate-400 hover:bg-white disabled:opacity-50" disabled="">
+                            <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+                        </button>
+                        <button class="px-3 py-1 rounded bg-primary text-white text-body-sm font-bold">1</button>
+                        <button class="px-3 py-1 rounded hover:bg-white text-slate-600 text-body-sm font-medium">2</button>
+                        <button class="px-3 py-1 rounded hover:bg-white text-slate-600 text-body-sm font-medium">3</button>
+                        <span class="px-2 text-slate-400 text-body-sm">...</span>
+                        <button class="px-3 py-1 rounded hover:bg-white text-slate-600 text-body-sm font-medium">129</button>
+                        <button class="p-2 rounded border border-slate-200 text-slate-400 hover:bg-white">
+                            <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+                        </button>
+                    </div>
+                </div> -->
             </div>
         </div>
         <!-- BottomNavBar (Shared Component Mobile Only) -->

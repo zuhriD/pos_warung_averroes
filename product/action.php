@@ -106,7 +106,7 @@ function updateProduct($con, $id, $nama, $harga, $deskripsi, $image, $stock, $ca
     $result = $con->execute_query($query);
 
     if ($result) {
-        // header("Location: index.php");
+        header("Location: index.php");
     } else {
         echo "Gagal Mengupdate Role";
     }

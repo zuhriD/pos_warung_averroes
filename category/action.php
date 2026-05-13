@@ -6,14 +6,14 @@ include '../connection.php';
 if (isset($_GET['aksi'])) {
     $aksi = $_GET['aksi'];
     if ($aksi == 'insert') {
-        $nama = $_POST['nama_kategori'];
+        $nama = $_POST['nama_category'];
         insertCategory($conn, $nama);
     } else if ($aksi == 'edit') {
         $id = $_GET['id'];
         $data = showDataEditCategory($conn, $id)->fetch_assoc();
     } else if ($aksi == 'update') {
         $id = $_POST['id'];
-        $nama = $_POST['nama_kategori'];
+        $nama = $_POST['nama_category'];
         updateCategory($conn, $id, $nama);
     } else if ($aksi == 'delete') {
         $id = $_GET['id'];
@@ -67,6 +67,6 @@ function deleteCategory($con, $id)
     if ($result) {
         header("Location: index.php");
     } else {
-        echo "Gagal Menghapus Role";
+        echo "Gagal Menghapus Category";
     }
 }
